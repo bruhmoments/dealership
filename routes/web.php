@@ -24,7 +24,11 @@ Route::middleware(['auth'])->group(function () {
     })->name('dashboard');
 
     Route::prefix('dashboard')->group(function () {
-        Route::resource('products', ProductController::class);
+        Route::resource('products', ProductController::class)->names([
+            'index'     => 'products.index',
+            'create'    => 'products.create',
+            'edit'      => 'products.edit',
+        ]);
     });
 });
 

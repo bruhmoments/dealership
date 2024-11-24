@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
-    // views/products/index
+    // views/products/
     public function index()
     {
         $products = Product::with(('category'))->paginate(10);
